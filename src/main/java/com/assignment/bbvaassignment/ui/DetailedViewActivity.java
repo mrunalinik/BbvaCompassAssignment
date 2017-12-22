@@ -47,7 +47,7 @@ public class DetailedViewActivity extends BaseActivity implements View.OnClickLi
     private void initializeViews() {
         txtAddr = findViewById(R.id.address);
         txtName = findViewById(R.id.name);
-        txtRating = findViewById(R.id.rating);
+        txtRating = findViewById(R.id.place_rating);
         navToDestination = findViewById(R.id.navToDestination);
         navToDestination.setOnClickListener(this);
     }

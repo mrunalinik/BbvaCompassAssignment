@@ -1240,6 +1240,10 @@
         "source": "/Users/mrunalinikoritala/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/0371f2782a20c3721f0253b6c4a74b21/res/drawable-hdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
+        "merged": "/Users/mrunalinikoritala/Desktop/new/bbva/bbva-compass-assignment/app/build/intermediates/res/merged/debug/layout_places_row.xml.flat",
+        "source": "/Users/mrunalinikoritala/Desktop/new/bbva/bbva-compass-assignment/app/src/main/res/layout/places_row.xml"
+    },
+    {
         "merged": "/Users/mrunalinikoritala/Desktop/new/bbva/bbva-compass-assignment/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "/Users/mrunalinikoritala/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/0371f2782a20c3721f0253b6c4a74b21/res/drawable-mdpi-v4/abc_list_selector_disabled_holo_light.9.png"
     },
@@ -1406,10 +1410,6 @@
     {
         "merged": "/Users/mrunalinikoritala/Desktop/new/bbva/bbva-compass-assignment/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "/Users/mrunalinikoritala/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/316654f49e9804004b44d9371a943213/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
-    },
-    {
-        "merged": "/Users/mrunalinikoritala/Desktop/new/bbva/bbva-compass-assignment/app/build/intermediates/res/merged/debug/layout_emg_contacts_row.xml.flat",
-        "source": "/Users/mrunalinikoritala/Desktop/new/bbva/bbva-compass-assignment/app/src/main/res/layout/emg_contacts_row.xml"
     },
     {
         "merged": "/Users/mrunalinikoritala/Desktop/new/bbva/bbva-compass-assignment/app/build/intermediates/res/merged/debug/drawable_design_fab_background.xml.flat",

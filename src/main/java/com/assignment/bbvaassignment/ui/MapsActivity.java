@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.assignment.bbvaassignment.R;
 import com.assignment.bbvaassignment.adapters.RecyclerAdapter;
+import com.assignment.bbvaassignment.apis.APIRequestHandler;
 import com.assignment.bbvaassignment.apis.GetAsync;
 import com.assignment.bbvaassignment.constants.MyConstants;
 import com.assignment.bbvaassignment.listeners.OnAsyncTaskCompleteListener;
@@ -48,8 +49,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class MapsActivity extends BaseActivity implements View.OnClickListener, OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener, LocationListener{
+        GoogleApiClient.OnConnectionFailedListener, LocationListener, Callback<Map<String,Object>>
+{
 
     //    Key for nearby places json from google
     private final String GEOMETRY = "geometry";
@@ -311,7 +317,7 @@ public class MapsActivity extends BaseActivity implements View.OnClickListener, 
 
 
     private void loadNearByPlaces(double latitude, double longitude) {
-        StringBuilder googlePlacesUrl =
+        /*StringBuilder googlePlacesUrl =
                 new StringBuilder("https://maps.googleapis.com/maps/api/place/textsearch/json?");
         googlePlacesUrl.append("query="+ URLEncoder.encode(query));
         googlePlacesUrl.append("&location=").append(latitude).append(",").append(longitude);
@@ -337,7 +343,19 @@ public class MapsActivity extends BaseActivity implements View.OnClickListener, 
             }
         });
         //Utility.showProgressDialog(mActivity);
-        getAsync.execute(googlePlacesUrl.toString());
+        //getAsync.execute(googlePlacesUrl.toString());*/
+
+
+        HashMap<String, String> paramsMap= new HashMap<String,String>();
+        paramsMap.put("query",String.valueOf(URLEncoder.encode(query)));
+        paramsMap.put("location", latitude+","+longitude);
+        paramsMap.put("radius",String.valueOf(10000));
+        paramsMap.put("key",getString(R.string.google_api_key));
+
+        Call<Map<String,Object>> call = APIRequestHandler.getInstance().getPlaces(paramsMap);
+        call.enqueue(MapsActivity.this);
+
+
     }
 
 
@@ -441,5 +459,23 @@ public class MapsActivity extends BaseActivity implements View.OnClickListener, 
             //Dummy commented due to not using
             adapter.notifyDataSetChanged();
         }
+    }
+
+    @Override
+    public void onResponse(Call<Map<String,Object>> call, Response<Map<String,Object>> response) {
+        if(response!=null){
+            Map<String,Object> response2 = response.body();
+            try {
+                JSONObject jsonObject = new JSONObject(response2);
+                parseLocationResult(jsonObject);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void onFailure(Call<Map<String,Object>> call, Throwable t) {
+            t.printStackTrace();
     }
 }

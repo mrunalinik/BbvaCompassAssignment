@@ -27,7 +27,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.emg_contacts_row, parent, false);
+        View view = inflater.inflate(R.layout.places_row, parent, false);
         MyViewHolder holder = new MyViewHolder(view);
         return holder;
     }
@@ -35,22 +35,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         PlacesDTO current = data.get(position);
-        holder.title.setText(current.getName());
+        holder.placeName.setText("Name : "+current.getName());
 
         if(current.getFormatted_address() != null && !current.getFormatted_address().isEmpty()) {
-            holder.subTitle.setText(current.getFormatted_address());
-            holder.subTitle.setVisibility(View.VISIBLE);
+            holder.placeAddress.setText(current.getFormatted_address());
+            holder.placeAddress.setVisibility(View.VISIBLE);
         } else {
-            holder.subTitle.setText("");
-            holder.subTitle.setVisibility(View.GONE);
+            holder.placeAddress.setText("");
+            holder.placeAddress.setVisibility(View.GONE);
         }
 
         if(current.getPlaceRating() != null && !current.getPlaceRating().isEmpty()) {
-            holder.rating.setText(current.getPlaceRating());
-            holder.rating.setVisibility(View.VISIBLE);
+            holder.placeRating.setText(current.getPlaceRating());
+            holder.placeRating.setVisibility(View.VISIBLE);
         } else {
-            holder.rating.setText("");
-            holder.rating.setVisibility(View.GONE);
+            holder.placeRating.setText("");
+            holder.placeRating.setVisibility(View.GONE);
         }
     }
 
@@ -60,13 +60,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView title, rating, subTitle;
+        TextView placeName, placeRating, placeAddress;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.title);
-            rating = (TextView) itemView.findViewById(R.id.rating);
-            subTitle=(TextView)itemView.findViewById(R.id.subTitle);
+            placeName = (TextView) itemView.findViewById(R.id.place_name);
+            placeRating = (TextView) itemView.findViewById(R.id.place_rating);
+            placeAddress=(TextView)itemView.findViewById(R.id.place_address);
         }
     }
 }
