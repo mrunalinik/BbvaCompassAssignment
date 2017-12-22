@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">BBVA Compass</string>
+    <string name="google_api_key">AIzaSyBdT6mr0sQpMbLzRSPvSXKXi52sOdSRNVE</string>
+    <string name="ok">OK</string>
+    <string name="noResponseGoogle">No response from google</string>
+    <string name="invalidResponseGoogle">Invalid response from google</string>
+    <string name="progress_pleaseWait">Please wait</string>
+    <string name="nearby_txtfound">Found</string>
+    <string name="nearby_txtno">No</string>
+    <string name="nearby_txtfoundnear">Found near to your location!!!</string>
+    <string name="nearby_yourloc">Your Location</string>
+    <string name="locationPermissionMsg">This application needs location permission to find your current location</string>
+    <string name="cancel">Cancel</string>
+    <string name="action_list">List</string>
+    <string name="action_map">Map</string>
+    <string name="btn_bbvaCompass">BBVA Compass</string>
+</resources>
