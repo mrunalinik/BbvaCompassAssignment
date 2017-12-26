@@ -1,0 +1,4 @@
+#Tue Dec 26 13:38:07 CST 2017
+base.0=/Users/mrunalinikoritala/Desktop/bbva-new/BbvaCompassAssignment/app/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
